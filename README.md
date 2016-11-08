@@ -1,2 +1,5 @@
 # SurgeRule
-Surge Rule
+
+1. 屏蔽部分广告
+1. 代理快速切换
+1. 快捷方便
