@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+import re
 from configparser import ConfigParser
 
 
@@ -40,7 +41,14 @@ def main():
                 data = data.replace('{}_{}_RULES_HERE'.format(category.upper(),
                                                               rule_set.upper()),
                                     read_rules(category, rule_set, rule_files))
-
+    try:
+        with open("NodeInfo.txt", 'rt') as f:
+            node_data = f.read()
+        if len(node_data) > 10:
+            data = re.sub(r'\[Proxy\][\s\S]+?\[Rule\]', "\n"+node_data.strip()+"\n\n[Rule]", data)
+    except:
+        pass
+    
     with open("Surge_Customize.conf", 'w') as f:
         f.write(data)
 
