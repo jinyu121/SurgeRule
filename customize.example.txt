@@ -1,5 +1,0 @@
-[Surge]
-RuleCategory = Adblock
-
-Adblock = ad_company,movie,shopping,sns
-
