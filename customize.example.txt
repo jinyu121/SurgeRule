@@ -1,0 +1,6 @@
+[AdBlock]
+AdCompany
+Movie
+Shopping
+SNS
+
