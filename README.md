@@ -2,9 +2,16 @@
 
 ## 关于本规则集
 
-本规则集意在尽量清晰、精简。
+本规则集意在尽量清晰、精简，并有较强的可定制性。
 
-去广告规则请根据需要自行添加。
+本规则分为 「基于域名的规则」、「基于 IP 的规则」和「其他规则」三部分。
+
+## 使用方法
+
+1. 将`customize.example.ini`复制为`customize.ini`。
+1. 根据需要，修改`customize.ini`。
+1. `python Customize.py`
+1. 得到`Surge_Customize.conf`
 
 ## 一起来完善本规则集
 
