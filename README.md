@@ -8,9 +8,16 @@
 
 ## 使用方法
 
+### 定制规则
+
 1. 将自己的节点信息写入 `NodeInfo.txt`
 1. 将 `customize.example.ini` 复制为 `customize.ini`
 1. 根据需要，修改`customize.ini`
+1. 运行 `python Customize.py` ，得到 `Surge_Customize.conf`
+
+### 更新规则
+
+1. 使用 Git 获取最新版本
 1. 运行 `python Customize.py` ，得到 `Surge_Customize.conf`
 
 ## 一起来完善本规则集
