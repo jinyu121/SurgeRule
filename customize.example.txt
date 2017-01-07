@@ -1,6 +1,5 @@
-[AdBlock]
-AdCompany
-Movie
-Shopping
-SNS
+[Surge]
+RuleCategory = Adblock
+
+Adblock = ad_company,movie,shopping,sns
 
