@@ -7,7 +7,7 @@ from configparser import ConfigParser
 def read_rules(category, rule_set, rule_files):
     rules = ""
     for file in rule_files:
-        if len(file)>0:
+        if len(file) > 0:
             filename = os.path.join('enhance',
                                     category.strip().lower(),
                                     rule_set.strip().lower(),
@@ -23,10 +23,10 @@ def read_rules(category, rule_set, rule_files):
 
 def main():
     cfg = ConfigParser()
-    
-    cfg_file_path = 'customize.example.ini'
-    if os.path.exists('customize.ini'):
-        cfg_file_path = 'customize.ini'
+
+    cfg_file_path = 'Customize.example.ini'
+    if os.path.exists('Customize.ini'):
+        cfg_file_path = 'Customize.ini'
 
     cfg.read(cfg_file_path)
 
@@ -42,13 +42,18 @@ def main():
                                                               rule_set.upper()),
                                     read_rules(category, rule_set, rule_files))
     try:
-        with open("NodeInfo.txt", 'rt') as f:
+        node_info_path = "NodeInfo.example.conf"
+        if os.path.exists("NodeInfo.conf"):
+            node_info_path = "NodeInfo.conf"
+        with open(node_info_path, 'rt') as f:
             node_data = f.read()
         if len(node_data) > 10:
-            data = re.sub(r'\[Proxy\][\s\S]+?\[Rule\]', "\n"+node_data.strip()+"\n\n[Rule]", data)
+            data = re.sub(r'\[Proxy\][\s\S]+?\[Rule\]',
+                          "\n" + node_data.strip() + "\n\n[Rule]",
+                          data)
     except:
         pass
-    
+
     with open("Surge_Customize.conf", 'w') as f:
         f.write(data)
 
