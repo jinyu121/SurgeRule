@@ -12,7 +12,7 @@
 
 1. 将 `customize.example.json` 复制为 `customize.json`
 1. 根据需要，修改`customize.json`
-1. 运行 `python Customize.py` ，得到 `Surge_Customize.conf`
+1. 运行 `python3 Customize.py` ，得到 `Surge_Customize.conf`
 
 ### 更新规则
 
