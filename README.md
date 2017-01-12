@@ -10,14 +10,13 @@
 
 ### 定制规则
 
-1. 将自己的节点信息写入 `NodeInfo.txt`
-1. 将 `customize.example.ini` 复制为 `customize.ini`
-1. 根据需要，修改`customize.ini`
+1. 将 `customize.example.json` 复制为 `customize.json`
+1. 根据需要，修改`customize.json`
 1. 运行 `python Customize.py` ，得到 `Surge_Customize.conf`
 
 ### 更新规则
 
-1. 使用 Git 获取最新版本
+1. 推荐使用 Git 获取最新版本
 1. 运行 `python Customize.py` ，得到 `Surge_Customize.conf`
 
 ## 一起来完善本规则集
@@ -26,10 +25,8 @@
 
 我们需要：
 
-1. 将主规则内的网站进行验证、分类和按字母排序
 1. 补充新的规则，并去除重复和无用的规则
 1. 添加去广告规则
-1. 一个“规则合并”的脚本
 
 期待您的PR！
 

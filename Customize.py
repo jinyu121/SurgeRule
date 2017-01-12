@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import re
-from configparser import ConfigParser
+import json
 
 
 def read_rules(category, rule_set, rule_files):
@@ -22,40 +22,29 @@ def read_rules(category, rule_set, rule_files):
 
 
 def main():
-    cfg = ConfigParser()
+    cfg_file_path = 'Customize.example.json'
+    if os.path.exists('Customize.json'):
+        cfg_file_path = 'Customize.json'
 
-    cfg_file_path = 'Customize.example.ini'
-    if os.path.exists('Customize.ini'):
-        cfg_file_path = 'Customize.ini'
-
-    cfg.read(cfg_file_path)
-
-    categories = cfg.sections()
+    with open(cfg_file_path, 'r') as f:
+        cfg = json.load(f)
 
     with open("Surge.conf", 'rt') as f:
         data = f.read()
 
-        for category in categories:
-            for rule_set in cfg[category]:
-                rule_files = cfg.get(category, rule_set).split(',')
-                data = data.replace('{}_{}_RULES_HERE'.format(category.upper(),
-                                                              rule_set.upper()),
-                                    read_rules(category, rule_set, rule_files))
-    try:
-        node_info_path = "NodeInfo.example.conf"
-        if os.path.exists("NodeInfo.conf"):
-            node_info_path = "NodeInfo.conf"
-        with open(node_info_path, 'rt') as f:
-            node_data = f.read()
-        if len(node_data) > 10:
-            data = re.sub(r'\[Proxy\][\s\S]+?\[Rule\]',
-                          "\n" + node_data.strip() + "\n\n[Rule]",
-                          data)
-    except:
-        pass
+    # 节点信息
+    data = re.sub(r'\[Proxy\][\s\S]+?\[Rule\]',
+                  "\n" + "\n".join(cfg["config"]["node"]) + "\n\n[Rule]",
+                  data)
 
-    with open("Surge_Customize.conf", 'w') as f:
-        f.write(data)
+    # 规则信息
+    for category in cfg['config']["category"]:
+        for rule_set in cfg[category].keys():
+            data = data.replace('{}_{}_RULES_HERE'.format(category.upper(), rule_set.upper()),
+                                read_rules(category, rule_set, cfg[category][rule_set]))
+
+    with open("Surge_Customize.conf", 'w') as ff:
+        ff.write(data)
 
 
 if "__main__" == __name__:
