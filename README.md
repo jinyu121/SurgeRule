@@ -6,18 +6,28 @@
 
 本规则分为 「基于域名的规则」、「基于 IP 的规则」和「其他规则」三部分。
 
+参考： [Surge 使用手册](https://www.gitbook.com/book/blankwonder/surge-manual)
+
 ## 使用方法
 
-### 定制规则
+### Python 版
 
 1. 将 `customize.example.json` 复制为 `customize.json`
-1. 根据需要，修改`customize.json`
+1. 根据需要，定制 `customize.json`
 1. 运行 `python3 Customize.py` ，得到 `Surge_Customize.conf`
+
+### PHP 版
+
+1. 将 `customize.example.json` 复制为 `customize.json`
+1. 根据需要，定制 `customize.json`
+1. 将 `customize.json` 使用Base64进行编码
+1. 运行 `Customize.php/?conf=BASE64编码结果` ，得到`Surge_Customize.conf`
 
 ### 更新规则
 
 1. 推荐使用 Git 获取最新版本
-1. 运行 `python Customize.py` ，得到 `Surge_Customize.conf`
+1. Python 版： 运行 `python Customize.py` ，得到 `Surge_Customize.conf`
+1. PHP 版： 可以自动更新
 
 ## 一起来完善本规则集
 
