@@ -22,210 +22,243 @@
 	</div>
 </div>
 <div class="container">
+    <ul id="main_tab" class="nav nav-tabs nav-justified" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">定制规则</a></li>
+        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">解析定制代码</a></li>
+    </ul>
 	<div class="row">
-		<div class="col-sm-12">
-			<form>
-				<div class="section">
-					<h1 class="page-header"><span class="glyphicon glyphicon-tasks"></span> 节点信息</h1>
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="form-group">
-								<textarea id="node_info" class="form-control" rows="5"></textarea>
-								<span class="help-block">填入你的节点信息。包括<code>[Proxy]</code>和<code>[Proxy Group]</code>段。<a href="#" class="btn btn-success btn-xs" data-toggle="modal" data-target="#node_info_example_model">查看示例</a></span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="section">
-					<h1 class="page-header"><span class="glyphicon glyphicon-cog"></span> 规则选取</h1>
-					<div class="alert alert-danger alert-dismissible fade in" role="alert">
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<p>
-							<b>请慎用各种激进规则！</b>激进规则杀伤力较大，可能导致许多不可预料的事情发生。请三思后谨慎选用。
-						</p>
-					</div>
-					<h2>基于域名的规则</h2>
-					<h3>增强规则</h3>
-					<div class="row">
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-big_company"/>大公司</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-blog"/>博客</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-cdn"/>公共CDN</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-design"/>设计狮</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-developer"/>程序猿</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-download"/>下载站，BT下载</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-education"/>教育机构</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-government"/>政府机构</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-images"/>图床和图片分享</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-music"/>音乐和播客</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-net_disk"/>网盘、云存储、文件分享</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-network"/>网络服务</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-news"/>新闻</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-shopping"/>购物</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-sns"/>社交网络</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-tools"/>工具</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-url_shorter"/>短链接</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-video"/>视频分享</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-enhance-url_shorter"/>其他</label>
-							</div>
-						</div>
-					</div>
-					<h3>去广告规则</h3>
-					<div class="row">
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-adblock-ad_company"/>广告公司</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-adblock-analysis"/>统计公司</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-adblock-movie"/>电影网站</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-adblock-shopping"/>购物网站</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-adblock-sns"/>社交网站</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-adblock-tool"/>工具网站</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="domain-adblock-video"/>视频网站</label>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label class="text-danger"><input type="checkbox" name="domain-adblock-aggressive" aggressive="aggressive"/><span class="glyphicon glyphicon-bell"></span> 激进规则</label>
-							</div>
-						</div>
-					</div>
-					<h2>基于 IP 的规则</h2>
-					<h3>增强规则</h3>
-					<div class="row">
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="ip-enhance-telegram"/>Telegram</label>
-							</div>
-						</div>
-					</div>
-					<h3>去广告规则</h3>
-					<div class="row">
-						<div class="col-sm-3 col-xs-6">
-                            暂无
-						</div>
-					</div>
-					<h2>其他规则</h2>
-					<h3>Hosts</h3>
-					<div class="row">
-						<div class="col-sm-3 col-xs-6">
-                            暂无
-						</div>
-					</div>
-					<h3>URL重写</h3>
-					<div class="row">
-						<div class="col-sm-3 col-xs-6">
-							<div class="checkbox">
-								<label><input type="checkbox" name="other-rewrite-qq"/>QQ</label>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="section">
-					<h1 class="page-header"><span class="glyphicon glyphicon-download-alt"></span> 下载</h1>
-					<p class="lead">
-						庆祝一下！你的定制版 Surge 规则即将大功告成。只要点击下面的按钮就可以下载了。
-					</p>
-					<button id="doit" class="btn btn-primary btn-block btn-lg">下载</button>
-				</div>
-			</form>
-		</div>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <div class="col-sm-12">
+        			<form>
+        				<div class="section">
+        					<h1 class="page-header"><span class="glyphicon glyphicon-tasks"></span> 节点信息</h1>
+        					<div class="row">
+        						<div class="col-sm-12">
+        							<div class="form-group">
+        								<textarea id="node_info" class="form-control" rows="5"></textarea>
+        								<span class="help-block">填入你的节点信息。包括<code>[Proxy]</code>和<code>[Proxy Group]</code>段。<a href="#" class="btn btn-success btn-xs" data-toggle="modal" data-target="#node_info_example_model">查看示例</a></span>
+        							</div>
+        						</div>
+        					</div>
+        				</div>
+        				<div class="section">
+        					<h1 class="page-header"><span class="glyphicon glyphicon-cog"></span> 规则选取</h1>
+        					<div class="alert alert-danger alert-dismissible fade in" role="alert">
+        						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        						<p>
+        							<b>请慎用各种激进规则！</b>激进规则杀伤力较大，可能导致许多不可预料的事情发生。请三思后谨慎选用。
+        						</p>
+        					</div>
+        					<h2>基于域名的规则</h2>
+        					<h3>增强规则</h3>
+        					<div class="row">
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-big_company"/>大公司</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-blog"/>博客</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-cdn"/>公共CDN</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-design"/>设计狮</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-developer"/>程序猿</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-download"/>下载站，BT下载</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-education"/>教育机构</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-government"/>政府机构</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-images"/>图床和图片分享</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-music"/>音乐和播客</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-net_disk"/>网盘、云存储、文件分享</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-network"/>网络服务</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-news"/>新闻</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-shopping"/>购物</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-sns"/>社交网络</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-tools"/>工具</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-url_shorter"/>短链接</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-video"/>视频分享</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-enhance-url_shorter"/>其他</label>
+        							</div>
+        						</div>
+        					</div>
+        					<h3>去广告规则</h3>
+        					<div class="row">
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-adblock-ad_company"/>广告公司</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-adblock-analysis"/>统计公司</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-adblock-movie"/>电影网站</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-adblock-shopping"/>购物网站</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-adblock-sns"/>社交网站</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-adblock-tool"/>工具网站</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="domain-adblock-video"/>视频网站</label>
+        							</div>
+        						</div>
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label class="text-danger"><input type="checkbox" name="domain-adblock-aggressive" aggressive="aggressive"/><span class="glyphicon glyphicon-bell"></span> 激进规则</label>
+        							</div>
+        						</div>
+        					</div>
+        					<h2>基于 IP 的规则</h2>
+        					<h3>增强规则</h3>
+        					<div class="row">
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="ip-enhance-telegram"/>Telegram</label>
+        							</div>
+        						</div>
+        					</div>
+        					<h3>去广告规则</h3>
+        					<div class="row">
+        						<div class="col-sm-3 col-xs-6">
+                                    暂无
+        						</div>
+        					</div>
+        					<h2>其他规则</h2>
+        					<h3>Hosts</h3>
+        					<div class="row">
+        						<div class="col-sm-3 col-xs-6">
+                                    暂无
+        						</div>
+        					</div>
+        					<h3>URL重写</h3>
+        					<div class="row">
+        						<div class="col-sm-3 col-xs-6">
+        							<div class="checkbox">
+        								<label><input type="checkbox" name="other-rewrite-qq"/>QQ</label>
+        							</div>
+        						</div>
+        					</div>
+        				</div>
+        				<div class="section">
+        					<h1 class="page-header"><span class="glyphicon glyphicon-download-alt"></span> 下载</h1>
+        					<p class="lead">
+        						庆祝一下！你的定制版 Surge 规则即将大功告成。只要点击下面的按钮就可以下载了。
+        					</p>
+        					<button id="doit" class="btn btn-primary btn-block btn-lg">下载</button>
+        				</div>
+        			</form>
+        		</div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="settings">
+                <div class="col-sm-12">
+                    <div id="config-parse-result-success" class="alert alert-success" role="alert">
+                        <h4><span class="glyphicon glyphicon-ok"></span> 成功</h4>请切换到左边“定制规则”继续定制！
+                    </div>
+                    <div id="config-parse-result-error" class="alert alert-danger" role="alert">
+                        <h4><span class="glyphicon glyphicon-alert"></span> 有错误</h4>此配置代码有错误，放弃吧！
+                    </div>
+                    <form>
+        				<div class="section">
+        					<h1 class="page-header"><span class="glyphicon glyphicon-tasks"></span> 定制代码</h1>
+                            <p>定制代码是规则文件的第一行<code>#!MANAGED-CONFIG ..........</code></p>
+                            <p>定制代码中记录了上一次定制的各种选项，可以简化您的定制过程。如果您有定制代码，请在下方输入。</p>
+        					<div class="row">
+        						<div class="col-sm-12">
+        							<div class="form-group">
+        								<textarea id="customize_code" class="form-control" rows="5"></textarea>
+        							</div>
+        						</div>
+        					</div>
+                            <button id="parseit" class="btn btn-primary btn-block btn-lg">解析定制代码</button>
+        				</div>
+                    </form>
+                </div>
+            </div>
+        </div>
 	</div>
 </div>
 <!-- 模态框 -->
@@ -332,17 +365,56 @@ $(function(){
                     cfg[category][rule_set].push(name);
                 })
             });
-        })
+        });
+        // 编码
         cfg_b64 = Base64.encode($.toJSON(cfg));
+        $("#customize_code").val(cfg_b64);
+        // 下载
         open("Customize.php/?conf="+cfg_b64);
         return false;
     };
+    // 规则解析
+    function parse_rule(){
+        // 读取
+        cfg_b64 = $("#customize_code").val();
+        str_conf_pos = cfg_b64.indexOf("?conf=");
+        if (str_conf_pos != -1){
+            cfg_b64 = cfg_b64.substring(str_conf_pos + 6);
+        }
+        try{
+            // 解码
+            cfg = $.parseJSON(Base64.decode(cfg_b64));
+            // 解析节点信息
+            $("#node_info").val(cfg.config.node.join("\n"));
+            // 解析规则选取
+            // 初始化：全部不选中
+            $(":checkbox").attr("checked", false);
+            cfg.config.category.forEach(function(category){
+                Object.keys(cfg[category]).forEach(function(rule_set){
+                    cfg[category][rule_set].forEach(function(rule_name){
+                        checkbox_name = category+"-"+rule_set +"-"+rule_name;
+                        $(":checkbox[name = '"+checkbox_name+"']").prop("checked", true);
+                    });
+                });
+            });
+            $("#config-parse-result-success").slideDown().slideUp(1500);
+            $("#main_tab a[href='#home']").tab('show');
+        }catch(e){
+            $("#config-parse-result-error").slideDown().slideUp(2000);
+        }
+        return false;
+    }
+
     // 初始化：全部选中
-    $(":checkbox").attr("checked", 'checked');
+    $(":checkbox").prop("checked", true);
     // 初始化：排除激进规则
-    $(":checkbox[aggressive]").attr("checked", false);
+    $(":checkbox[aggressive]").prop("checked", false);
+    $("#config-parse-result-success").hide();
+    $("#config-parse-result-error").hide();
     // 提交事件
     $("#doit").click(make_rule);
+    // 提交事件
+    $("#parseit").click(parse_rule);
 });
 </script>
 </body>
