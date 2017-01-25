@@ -21,7 +21,7 @@
 1. 将 `customize.example.json` 复制为 `customize.json`
 1. 根据需要，定制 `customize.json`
 1. 将 `customize.json` 使用Base64进行编码
-1. 运行 `Customize.php/?conf=BASE64编码结果` ，得到`Surge_Customize.conf`
+1. 访问 `Customize.php/?conf=BASE64编码结果` ，得到`Surge_Customize.conf`
 
 ### 更新规则
 
