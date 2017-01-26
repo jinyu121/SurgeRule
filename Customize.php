@@ -18,7 +18,7 @@ function read_rules($category, $rule_set, $rule_files) {
     foreach ($rule_files as $rule_file) {
         $filename = implode("/", array(
             dirname(__FILE__) ,
-            "enhance",
+            "extensions",
             $category,
             $rule_set,
             $rule_file

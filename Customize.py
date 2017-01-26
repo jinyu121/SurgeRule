@@ -8,7 +8,7 @@ def read_rules(category, rule_set, rule_files):
     rules = ""
     for file in rule_files:
         if len(file) > 0:
-            filename = os.path.join('enhance',
+            filename = os.path.join('extensions',
                                     category.strip().lower(),
                                     rule_set.strip().lower(),
                                     file.lower().strip() + ".conf")
