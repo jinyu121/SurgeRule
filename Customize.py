@@ -14,7 +14,7 @@ def read_rules(category, rule_set, rule_files):
                                     file.lower().strip() + ".conf")
             try:
                 with open(filename, 'rt') as f:
-                    rules += "\n// {}\n {}\n".format(file.capitalize(), f.read().strip())
+                    rules += "\n// {}\n{}\n".format(file.capitalize(), f.read().strip())
                 print("Success: {}".format(filename))
             except:
                 print("Error occurs while reading {}".format(filename))

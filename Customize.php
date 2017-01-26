@@ -33,7 +33,7 @@ function read_rules($category, $rule_set, $rule_files) {
             // 读取文件
             $file_data = file_get_contents($filename);
             // 合并
-            $rules = $rules . "\n// " . $rule_file . "\n" . $file_data;
+            $rules = $rules . "\n// " . ucfirst($rule_file) . "\n" . trim($file_data);
         }
         catch(Exception $e) {
         }
@@ -44,7 +44,7 @@ function read_rules($category, $rule_set, $rule_files) {
 $data = file_get_contents("Surge.conf");
 // 节点信息
 if (count($conf->{'config'}->{'node'}) >= 2) {
-    $data = preg_replace('/\[Proxy\][\s\S]+?\[Rule\]/', "\n" . implode("\n", $conf->{'config'}->{'node'}) . "\n", $data);
+    $data = preg_replace('/\[Proxy\][\s\S]+?\[Rule\]/', "\n" . implode("\n", $conf->{'config'}->{'node'}) . "\n[Rule]\n", $data);
 }
 // 规则信息
 foreach ($conf->{'config'}->{'category'} as $category) {
