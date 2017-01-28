@@ -424,7 +424,8 @@ $(function(){
             $("#node_info").val(cfg.config.node.join("\n"));
             // 解析规则选取
             // 初始化：全部不选中
-            $(":checkbox").attr("checked", false);
+            $(":checkbox").bootstrapSwitch("destroy");
+            $(":checkbox").prop("checked", false);
             cfg.config.category.forEach(function(category){
                 Object.keys(cfg[category]).forEach(function(rule_set){
                     cfg[category][rule_set].forEach(function(rule_name){
@@ -436,7 +437,6 @@ $(function(){
             // 其他配置
             $(":checkbox[name = 'config-managed']").prop("checked",cfg.config.managed);
             // 显示逻辑
-            $(":checkbox").bootstrapSwitch("destroy");
             $(":checkbox").bootstrapSwitch({size:'mini'});
             $("#customize_code_json").val(JSON.stringify(cfg, null, 4));
             $("#config-parse-result-success").slideDown().slideUp(1500);
