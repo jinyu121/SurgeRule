@@ -2,43 +2,40 @@
 
 ## 关于本规则集
 
-本规则集意在尽量清晰、精简，并有较强的可定制性。
+本规则集意在尽量清晰、精简、易于维护，并有较强的可定制性。
 
-本规则分为 「基于域名的规则」、「基于 IP 的规则」和「其他规则」三部分。
+本规则集附带了多种规则定制器，可以根据自身需要生成适合自己的规则。
 
-参考： [Surge 使用手册](https://www.gitbook.com/book/blankwonder/surge-manual)
+![Web版规则定制器截图](ScreenShot.png)
 
 ## 使用方法
 
-### Python 版
-
-1. 将 `customize.example.json` 复制为 `customize.json`
-1. 根据需要，定制 `customize.json`
-1. 运行 `python3 Customize.py` ，得到 `Surge_Customize.conf`
-
 ### PHP 版
 
-1. 将 `customize.example.json` 复制为 `customize.json`
-1. 根据需要，定制 `customize.json`
-1. 将 `customize.json` 使用Base64进行编码
-1. 访问 `Customize.php/?conf=BASE64编码结果` ，得到`Surge_Customize.conf`
+1. 使用 PHP 部署
+1. 使用浏览器打开 `Customize_config.html`
+1. 根据示例填写节点信息，并按需求选取规则
+1. 下载并导入Surge
 
-### 更新规则
+### Python 版
 
-1. 推荐使用 Git 获取最新版本
-1. Python 版： 运行 `python Customize.py` ，得到 `Surge_Customize.conf`
-1. PHP 版： 可以自动更新
+1. 将 `Customize.example.json` 复制为 `customize.json`
+1. 根据自身需要，修改`Customize.json`
+1. 运行 `python3 Customize.py` ，得到 `Surge_Customize.conf`
+
+`Customize.json` 可使用 `Customize_config.html` 生成。
+
+### 系统需求
+
+| 项目 | 需求 | 推荐 |
+| :---: | :---: | :---: |
+| PHP | >= 5.0 | >= 7.0 |
+| Python | >= 3.4 | >= 3.5 |
+| 浏览器 | 越新越好 | Chrome |
 
 ## 一起来完善本规则集
 
-依靠个人的力量很难建立一个完整的规则集。欢迎参与规则集的构建！
-
-我们需要：
-
-1. 补充新的规则，并去除重复和无用的规则
-1. 添加去广告规则
-
-期待您的PR！
+依靠个人的力量很难建立一个强大的规则集。欢迎参与本规则集的构建！期待你的 PR ！
 
 ## 声明
 

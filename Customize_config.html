@@ -272,6 +272,15 @@
         						</div>
         					</div>
                             <button id="parseit" class="btn btn-primary btn-block btn-lg">解析定制代码</button>
+                            <h1 class="page-header"><span class="glyphicon glyphicon-console"></span> JSON 文件</h1>
+                            <div class="row">
+        						<div class="col-sm-12">
+        							<div class="form-group">
+        								<textarea id="customize_code_json" class="form-control" rows="10"></textarea>
+                                        <span class="help-block">此 JSON 文件是定制代码的明文形式。</span>
+        							</div>
+        						</div>
+        					</div>
         				</div>
                     </form>
                 </div>
@@ -345,7 +354,7 @@
 <a href="https://github.com/jinyu121/SurgeRule">
     <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
 </a>
-<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery-json/2.6.0/jquery.json.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
@@ -394,6 +403,7 @@ $(function(){
         // 编码
         cfg_b64 = Base64.encode($.toJSON(cfg));
         $("#customize_code").val(cfg_b64);
+        $("#customize_code_json").val(JSON.stringify(cfg, null, 4));
         // 下载
         open("Customize.php/?conf="+cfg_b64);
         return false;
@@ -428,6 +438,7 @@ $(function(){
             // 显示逻辑
             $(":checkbox").bootstrapSwitch("destroy");
             $(":checkbox").bootstrapSwitch({size:'mini'});
+            $("#customize_code_json").val(JSON.stringify(cfg, null, 4));
             $("#config-parse-result-success").slideDown().slideUp(1500);
             $("#main_tab a[href='#home']").tab('show');
         }catch(e){
