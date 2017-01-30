@@ -19,6 +19,6 @@ def main(folder_from, folder_to, is_encode):
 
 
 if "__main__" == __name__:
-    main("dev", "extensions", True)
-    # main("extensions", "dev", False)
+    main("../dev", "../extensions", True)
+    # main("../extensions", "../dev", False)
     print("Success")
