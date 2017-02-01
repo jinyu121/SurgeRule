@@ -8,8 +8,12 @@ import requests
 
 def gfwlist():
     try:
+        print("GFWList Downloading...")
+
         request_result = requests.get("https://github.com/gfwlist/gfwlist/raw/master/gfwlist.txt")
         data = base64.b64decode(request_result.text).decode("utf-8")
+
+        print("GFWList Parsing...")
 
         pattern_comment = re.compile(r"^![\s\S]+?$", re.MULTILINE)
         data = re.sub(pattern_comment, "", data)
@@ -51,9 +55,9 @@ def gfwlist():
             for line in result_blacklist:
                 print("DOMAIN-SUFFIX,", line, ",🚀 Proxy", file=f, sep="")
 
-        print("GFWList Success")
+        print("GFWList Build Success")
     except:
-        print("GFWList Fail")
+        print("GFWList Build Fail")
 
 
 def main(folder_from, folder_to, is_encode):
@@ -74,13 +78,15 @@ def main(folder_from, folder_to, is_encode):
 def encode():
     gfwlist()
     main("../dev", "../extensions", True)
+    print("Encode Success")
 
 
 def decode():
     main("../extensions", "../dev", False)
+    print("Decode Success")
 
 
 if "__main__" == __name__:
     encode()
     # decode()
-    print("Success")
+    print("Done")
