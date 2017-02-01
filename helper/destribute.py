@@ -2,6 +2,7 @@
 import os
 import re
 import time
+import argparse
 import base64
 import requests
 
@@ -75,18 +76,18 @@ def main(folder_from, folder_to, is_encode):
                         base64.decode(input=file_in, output=file_out)
 
 
-def encode():
-    gfwlist()
-    main("../dev", "../extensions", True)
-    print("Encode Success")
-
-
-def decode():
-    main("../extensions", "../dev", False)
-    print("Decode Success")
-
-
 if "__main__" == __name__:
-    encode()
-    # decode()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-d", "--decode", help="Decode the rules", action="store_true")
+    parser.add_argument("-nogfw", "--no_gfwlist", help="Do not update GFWList", action="store_true")
+    args = parser.parse_args()
+
+    if not args.decode:
+        if not args.no_gfwlist:
+            gfwlist()
+        main("../dev", "../extensions", True)
+        print("Encode Success")
+    else:
+        main("../extensions", "../dev", False)
+        print("Decode Success")
     print("Done")
