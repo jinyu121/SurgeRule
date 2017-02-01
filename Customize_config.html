@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                             <div class="section">
-                                <h1 class="page-header"><span class="glyphicon glyphicon-cog"></span> 规则选取</h1>
+                                <h1 class="page-header"><span class="glyphicon glyphicon-list-alt"></span> 规则选取</h1>
                                 <h2>基于域名的规则</h2>
                                 <h3>增强规则</h3>
                                 <div class="row">
@@ -246,7 +246,7 @@
                                 </div>
                             </div>
                             <div class="section">
-                                <h1 class="page-header"><span class="glyphicon glyphicon-download-alt"></span> 其他选项</h1>
+                                <h1 class="page-header"><span class="glyphicon glyphicon-wrench"></span> 其他选项</h1>
                                 <h3>规则托管</h3>
                                 <div class="row">
                                     <div class="col-sm-12">
@@ -312,48 +312,53 @@
                     <h4 class="modal-title" id="myModalLabel">节点配置示例</h4>
                 </div>
                 <div class="modal-body">
-                    <h4>配置示例</h4>
-                    <pre>
-                        [Proxy]
-                        💊 Direct = direct
-                        🌞 1 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
-                        🌞 2 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
-                        🌚 1 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
-                        🌚 2 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
-                        [Proxy Group]
-                        🚀 Proxy = select, 💊 Direct, 🌞 Auto, 🌚 Auto, ⚖ Select
-                        🌐 Proxy = select, 💊 Direct, 🚀 Proxy
-                        🇨🇳 Proxy = select, 💊 Direct, 🚀 Proxy
-                        🍎 Proxy = select, 💊 Direct, 🚀 Proxy
-                        🌞 Auto = url-test, 🌞 1, 🌞 2, url = http://www.gstatic.com/generate_204
-                        🌚 Auto = url-test, 🌚 1, 🌚 2, url = http://www.gstatic.com/generate_204
-                        ⚖ Select = select, 🌞 1, 🌞 2, 🌚 1, 🌚 2
-                    </pre>
-                    <h4>配置说明</h4>
                     <div class="row">
                         <div class="col-sm-6">
-                            <p>
-                                在<code>[Proxy]</code>中，<b>建议</b>保留如下 Proxy ：
-                            </p>
-                            <dl class="dl-horizontal">
-                                <dt><code>💊 Direct = direct</code></dt>
-                                <dd>直连规则</dd>
-                            </dl>
+                            <h4>完整配置</h4>
+                            <pre class="pre-scrollable">
+[Proxy]
+💊 Direct = direct
+🌞 1 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
+🌞 2 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
+🌚 1 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
+🌚 2 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
+[Proxy Group]
+🚀 Proxy = select, 💊 Direct, 🌞 Auto, 🌚 Auto, ⚖ Select
+🌐 Proxy = select, 💊 Direct, 🚀 Proxy
+🇨🇳 Proxy = select, 💊 Direct, 🚀 Proxy
+🍎 Proxy = select, 💊 Direct, 🚀 Proxy
+🌞 Auto = url-test, 🌞 1, 🌞 2, url = http://www.gstatic.com/generate_204
+🌚 Auto = url-test, 🌚 1, 🌚 2, url = http://www.gstatic.com/generate_204
+⚖ Select = select, 🌞 1, 🌞 2, 🌚 1, 🌚 2
+                            </pre>
                         </div>
                         <div class="col-sm-6">
+                            <h4>精简配置</h4>
+                            <pre class="pre-scrollable">
+[Proxy]
+💊 Direct = direct
+🌞 Line = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
+[Proxy Group]
+🚀 Proxy = select, 🌞 Line
+🌐 Proxy = select, 🌞 Line
+🇨🇳 Proxy = select, 🌞 Line
+🍎 Proxy = select, 🌞 Line
+                            </pre>
+                        </div>
+                    </div>
+                    <h4>配置说明</h4>
+                    <div class="row">
+                        <div class="col-sm-12">
                             <p>
-                                在<code>[Proxy Group]</code>中，<b>必须</b>保留如下 Group ：
+                                在<code>[Proxy]</code>或<code>[Proxy Group]</code>中，<b>必须</b>保留如下 Proxy 或 Group：
                             </p>
-                            <dl class="dl-horizontal">
-                                <dt><code>🚀 Proxy</code></dt>
-                                <dd>一般代理</dd>
-                                <dt><code>🌐 Proxy</code></dt>
-                                <dd>兜底全局代理</dd>
-                                <dt><code>🇨🇳 Proxy</code></dt>
-                                <dd>国内网站访问规则</dd>
-                                <dt><code>🍎 Proxy</code></dt>
-                                <dd>苹果服务专用规则</dd>
-                            </dl>
+                            <ul>
+                                <li>直连规则： <code>💊 Direct = direct</code></li>
+                                <li>一般代理： <code>🚀 Proxy</code></li>
+                                <li>兜底全局代理： <code>🌐 Proxy</code></li>
+                                <li>国内网站访问规则： <code>🇨🇳 Proxy</code></li>
+                                <li>苹果服务专用规则： <code>🍎 Proxy</code></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
