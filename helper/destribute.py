@@ -57,8 +57,9 @@ def gfwlist():
                 print("DOMAIN-SUFFIX,", line, ",🚀 Proxy", file=f, sep="")
 
         print("GFWList Build Success")
-    except:
+    except Exception as e:
         print("GFWList Build Fail")
+        print(e)
 
 
 def main(folder_from, folder_to, is_encode):

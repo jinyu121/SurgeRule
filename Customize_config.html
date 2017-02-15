@@ -153,9 +153,11 @@
                                             <label><input type="checkbox" name="domain-enhance-unknow" advanced="advanced"/> 其他</label>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-sm-3 col-xs-6">
                                         <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-gfwlist" advanced="advanced" data-on-color="danger" data-off-color="success"/> 激进规则</label>
+                                            <label class="text-danger"><input type="checkbox" name="domain-enhance-gfwlist" advanced="advanced" data-on-color="danger" data-off-color="success"/> 激进规则</label>
                                         </div>
                                     </div>
                                 </div>
@@ -191,9 +193,16 @@
                                             <label><input type="checkbox" name="domain-adblock-video"/> 视频网站</label>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-sm-3 col-xs-6">
                                         <div class="checkbox">
-                                            <label class="text-danger"><input type="checkbox" name="domain-adblock-aggressive" advanced="advanced" data-on-color="danger" data-off-color="success"/> 激进规则</label>
+                                            <label><input type="checkbox" name="domain-adblock-aggressive_qq_qzone" advanced="advanced" data-off-color="success"/> 屏蔽 QQ 空间</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6">
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="domain-adblock-aggressive_qq_ipad_aikan" advanced="advanced" data-off-color="success"/> 屏蔽 QQ 爱看</label>
                                         </div>
                                     </div>
                                 </div>
@@ -202,12 +211,14 @@
                                 <div class="row">
                                     <div class="col-sm-3 col-xs-6">
                                         <div class="checkbox">
-                                            <label><input type="checkbox" name="ip-enhance-gfwlist" advanced="advanced" data-on-color="danger" data-off-color="success"/> 激进规则</label>
+                                            <label><input type="checkbox" name="ip-enhance-telegram" advanced="advanced"/> Telegram</label>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-sm-3 col-xs-6">
                                         <div class="checkbox">
-                                            <label><input type="checkbox" name="ip-enhance-telegram" advanced="advanced"/> Telegram</label>
+                                            <label class="text-danger"><input type="checkbox" name="ip-enhance-gfwlist" advanced="advanced" data-on-color="danger" data-off-color="success"/> 激进规则</label>
                                         </div>
                                     </div>
                                 </div>
@@ -389,6 +400,14 @@
     <script src="helper/js/base64.min.js"></script>
     <script>
     $(function(){
+        // TextArea 多行文本转字符串数组
+        function textarea_to_array(item){
+            return $(item).val().split("\n");
+        }
+        // TextArea 字符串数组转多行文本
+        function array_to_textarea(item){
+            return item.join("\n");
+        }
         // 规则生成和下载
         function make_rule(){
             cfg={
@@ -415,7 +434,7 @@
                 }
             }
             // 读取节点信息
-            cfg.config.node=$("#node_info").val().split("\n");
+            cfg.config.node=textarea_to_array("#node_info");
             // 读取配置信息
             cfg.config.category.forEach(function(category){
                 Object.keys(cfg[category]).forEach(function(rule_set){
@@ -449,7 +468,7 @@
                 // 解码
                 cfg = $.parseJSON(Base64.decode(cfg_b64));
                 // 解析节点信息
-                $("#node_info").val(cfg.config.node.join("\n"));
+                $("#node_info").val(array_to_textarea(cfg.config.node));
                 // 解析规则选取
                 // 初始化：全部不选中
                 $(":checkbox").bootstrapSwitch("destroy");
