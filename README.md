@@ -13,15 +13,14 @@
 1. 使用 PHP 部署
 1. 使用浏览器打开 `Customize_config.html`
 1. 根据示例填写节点信息，并按需求选取规则
-1. 下载并导入Surge
+1. 导入 Surge
 
 ### Python 版
 
-1. 将 `Customize.example.json` 复制为 `customize.json`
-1. 根据自身需要，修改`Customize.json`
+1. 将 `Customize.example.json` 复制为 `Customize.json`
+1. 根据自身需要，修改`Customize.json`，或使用 `Customize_config.html` 生成
 1. 运行 `python3 Customize.py` ，得到 `Surge_Customize.conf`
-
-`Customize.json` 可使用 `Customize_config.html` 生成。
+1. 导入 Surge
 
 ### 系统需求
 
@@ -30,10 +29,6 @@
 | PHP | >= 5.0 | >= 7.0 |
 | Python | >= 3.4 | >= 3.5 |
 | 浏览器 | 越新越好 | Chrome |
-
-## 一起来完善本规则集
-
-依靠个人的力量很难建立一个强大的规则集。欢迎参与本规则集的构建！期待你的 PR ！
 
 ## 声明
 
