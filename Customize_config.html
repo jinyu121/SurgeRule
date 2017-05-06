@@ -156,7 +156,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
+                                        <div class="checkbox" data-toggle="tooltip" data-placement="bottom" title="某 List 中的黑名单网址">
                                             <label class="text-danger"><input type="checkbox" name="domain-enhance-gfwlist" advanced="advanced" data-on-color="danger" data-off-color="success"/> 激进规则</label>
                                         </div>
                                     </div>
@@ -256,8 +256,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label class="text-danger"><input type="checkbox" name="ip-enhance-gfwlist" advanced="advanced" data-on-color="danger" data-off-color="success"/> 激进规则</label>
+                                        <div class="checkbox" data-toggle="tooltip" data-placement="bottom" title="某 List 中的黑名单IP">
+                                            <label class="text-danger"><input type="checkbox" name="ip-enhance-gfwlist" advanced="advanced" data-on-color="danger"  data-off-color="success"/> 激进规则</label>
                                         </div>
                                     </div>
                                 </div>
@@ -296,6 +296,11 @@
                                     <div class="col-sm-3 col-xs-6">
                                         <div class="checkbox">
                                             <label><input type="checkbox" name="other-rewrite-jd"/> 京东跳转</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6">
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" advanced="advanced" data-off-color="success" name="other-rewrite-nopic"/> 全局无图省流量</label>
                                         </div>
                                     </div>
                                 </div>
@@ -665,7 +670,8 @@
                 $("#node_info").val(result);
             }
         }
-
+        // 初始化：Tooltip
+		$('[data-toggle="tooltip"]').tooltip();
         // 初始化：全部选中
         $(":checkbox").prop("checked", true);
         // 初始化：排除激进规则
