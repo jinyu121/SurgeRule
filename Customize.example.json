@@ -24,30 +24,30 @@
   },
   "domain": {
     "enhance": [
+      "big_company",
       "blog",
       "cdn",
+      "design",
       "developer",
       "download",
       "education",
       "government",
-      "images",
-      "video",
+      "image",
       "music",
       "net_disk",
-      "network",
       "news",
       "shopping",
       "sns",
       "tools",
       "unknow",
-      "url_shorter"
+      "url",
+      "video"
     ],
     "adblock": [
       "ad_company",
-      "movie",
+      "analysis",
       "shopping",
-      "sns",
-      "analysis"
+      "sns"
     ]
   },
   "ip": {
