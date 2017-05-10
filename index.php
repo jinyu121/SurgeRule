@@ -1,8 +1,5 @@
-<?php
-function print_info($name, $short_name, $is_advance, $on_style, $off_style){
-
-}
-?><!DOCTYPE html>
+<?php require_once('helper/functions.php')?>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8"/>
@@ -16,6 +13,10 @@ function print_info($name, $short_name, $is_advance, $on_style, $off_style){
         margin-bottom:50px;
     }
     </style>
+    <script>
+    var $SURGE_CUSTOMIZE_CONFIG = {};
+    $SURGE_CUSTOMIZE_CONFIG["page_base_url"] = "<?php echo get_page_base_url();?>";
+    </script>
 </head>
 <body>
     <div class="jumbotron">
