@@ -18,7 +18,7 @@ function print_info($name, $label, $hover, $is_advance, $on_style, $off_style, $
 function print_data($pre, $data)
 {
     foreach ($data as $value) {
-        print_info($pre.$value[0], $value[1], $value[2], $value[3], $value[4], $value[5], $value[6]);
+        print_info($pre.'-'.$value[0], $value[1], $value[2], $value[3], $value[4], $value[5], $value[6]);
     }
 }
 function is_https()
