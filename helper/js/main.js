@@ -58,9 +58,11 @@ $(function() {
         // 下载
         var download_url = $SURGE_CUSTOMIZE_CONFIG["page_base_url"] + "Customize.php/?conf=" + cfg_b64;
         // 使用 URL Scheme 直接导入 Surge
-        open("surge:///install-config?url=" + encodeURIComponent(download_url));
+        window.location = "surge:///install-config?url=" + encodeURIComponent(download_url);
         // 打开浏览器显示生成的内容
-        open(download_url);
+        setTimeout(function() {
+            open(download_url);
+        }, 500);
         return false;
     };
     // 规则解析
