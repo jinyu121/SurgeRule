@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+function print_info($name, $short_name, $is_advance, $on_style, $off_style){
+
+}
+?><!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8"/>
@@ -46,264 +50,13 @@
                             <div class="section">
                                 <h1 class="page-header"><span class="glyphicon glyphicon-list-alt"></span> 规则选取</h1>
                                 <h2>基于域名的规则</h2>
-                                <h3>增强规则</h3>
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-big_company"/> 大公司</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-bbs" advanced="advanced"/> BBS</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-blog" advanced="advanced"/> 博客</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-cdn"/> 公共CDN</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-design" advanced="advanced"/> 设计狮</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-developer" advanced="advanced"/> 程序猿</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-download" advanced="advanced"/> 下载站</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-education" advanced="advanced"/> 教育</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-government" advanced="advanced"/> 政府机构</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-image" advanced="advanced"/> 图床、图片分享</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-music" advanced="advanced"/> 音乐、播客</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-net_disk" advanced="advanced"/> 网盘、文件分享</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-news"/> 新闻</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-read_and_write" advanced="advanced"/> 阅读与写作</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-shopping" advanced="advanced"/> 购物</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-sns" advanced="advanced"/> 社交网络</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-tools" advanced="advanced"/> 工具</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-url" advanced="advanced"/> 链接服务</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-video" advanced="advanced"/> 视频分享</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-xxx" advanced="advanced"/> XXX</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-enhance-unknow" advanced="advanced"/> 其他</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox" data-toggle="tooltip" data-placement="bottom" title="某 List 中的黑名单网址">
-                                            <label class="text-danger"><input type="checkbox" name="domain-enhance-gfwlist" advanced="advanced" data-on-color="danger" data-off-color="success"/> 激进规则</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3>去广告和隐私保护规则</h3>
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-adblock-ad_company"/> 广告公司</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-adblock-analysis"/> 统计公司</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-adblock-shopping"/> 购物网站</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-adblock-sns"/> 社交网络</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-adblock-tool"/> 工具网站</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-adblock-video"/> 视频网站</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-adblock-aggressive_qq_qzone" advanced="advanced" data-off-color="success"/> 屏蔽 QQ 空间</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="domain-adblock-aggressive_qq_ipad_aikan" advanced="advanced" data-off-color="success"/> 屏蔽 QQ 爱看</label>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php require_once('helper/page-part/part-rule-domain.php')?>
                                 <h2>基于 HTTP 的规则</h2>
-                                <h3>增强规则</h3>
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="http-enhance-ua_apple" /> [UA] 🍎 专用</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="http-enhance-ua_china_apps" /> [UA] 国内APP</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="http-enhance-ua_apps" advanced="advanced"/> [UA] 常用APP</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="http-enhance-process_china_apps" advanced="advanced"/> [MAC] 国内APP</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="http-enhance-process_apps" advanced="advanced"/> [MAC] 常用APP</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3>去广告和隐私保护规则</h3>
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="http-adblock-other" advanced="advanced"/> [URL] 其他</label>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php require_once('helper/page-part/part-rule-http.php')?>
                                 <h2>基于 IP 的规则</h2>
-                                <h3>增强规则</h3>
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="ip-enhance-telegram" advanced="advanced"/> Telegram</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox" data-toggle="tooltip" data-placement="bottom" title="某 List 中的黑名单IP">
-                                            <label class="text-danger"><input type="checkbox" name="ip-enhance-gfwlist" advanced="advanced" data-on-color="danger"  data-off-color="success"/> 激进规则</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3>去广告和隐私保护规则</h3>
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="ip-adblock-china_mobile" advanced="advanced"/> 10086</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="ip-adblock-china_unicom" advanced="advanced"/> 10010</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="ip-adblock-china_telecom" advanced="advanced"/> 10000</label>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php require_once('helper/page-part/part-rule-ip.php')?>
                                 <h2>其他规则</h2>
-                                <h3>Hosts</h3>
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6">
-                                        暂无
-                                    </div>
-                                </div>
-                                <h3>URL重写</h3>
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="other-rewrite-qq"/> QQ</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="other-rewrite-jd"/> 京东跳转</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" advanced="advanced" data-off-color="success" name="other-rewrite-nopic"/> 全局无图省流量</label>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php require_once('helper/page-part/part-rule-other.php')?>
                             </div>
                             <div class="section">
                                 <h1 class="page-header"><span class="glyphicon glyphicon-wrench"></span> 其他选项</h1>
@@ -366,7 +119,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- 模态框 -->
     <?php require_once('helper/page-part/modal-example.php') ?>
     <?php require_once('helper/page-part/modal-convert-tool.php') ?>
