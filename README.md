@@ -11,14 +11,14 @@
 ### PHP 版
 
 1. 使用 PHP 部署
-1. 使用浏览器打开 `Customize_config.html`
+1. 使用浏览器打开 `index.php`
 1. 根据示例填写节点信息，并按需求选取规则
 1. 导入 Surge
 
 ### Python 版
 
 1. 将 `Customize.example.json` 复制为 `Customize.json`
-1. 根据自身需要，修改`Customize.json`，或使用 `Customize_config.html` 生成
+1. 根据自身需要，修改`Customize.json`，或使用 `index.php` 生成
 1. 运行 `python3 Customize.py` ，得到 `Surge_Customize.conf`
 1. 导入 Surge
 

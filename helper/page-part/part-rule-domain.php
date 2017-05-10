@@ -2,11 +2,10 @@
 <div class="row">
     <?php
         $data = [
-            ['big_company','常见大公司','',false,'','',''],
-            ['cdn','公共CDN','',false,'','',''],
-            ['news','新闻','',false,'','',''],
-            ['sns','社交网络','',false,'','',''],
-            ['net_disk','网盘、文件分享','',false,'','',''],
+            ['big_company','常见大公司','',true,'','',''],
+            ['cdn','公共CDN','',true,'','',''],
+            ['news','新闻','',true,'','',''],
+            ['sns','社交网络','',true,'','',''],
             ['bbs','BBS','',false,'','',''],
             ['blog','博客','',false,'','',''],
             ['design','设计狮','',false,'','',''],
@@ -16,6 +15,7 @@
             ['government','政府机构','',false,'','',''],
             ['image','图床、图片分享','',false,'','',''],
             ['music','音乐、播客','',false,'','',''],
+            ['net_disk','网盘、文件分享','',false,'','',''],
             ['read_and_write','阅读与写作','',false,'','',''],
             ['shopping','购物','',false,'','',''],
             ['tools','工具','',false,'','',''],
