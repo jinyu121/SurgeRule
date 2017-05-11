@@ -1,0 +1,3 @@
+RedirectMatch 404 /extensions/*
+RedirectMatch 404 /.git/*
+RedirectMatch 404 /helper/page-part/*
