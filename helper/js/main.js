@@ -211,7 +211,7 @@ $(function() {
                 var part = selection_data[category_key][part_key]
                 for (var selection_id in part) {
                     var selection = part[selection_id];
-                    var elem = $(elem_template.format(selection['name'],selection['label']));
+                    var elem = $(elem_template.format(category_key + '-' + part_key + '-' + selection['name'], selection['label']));
                     if (typeof(selection['advanced']) !== 'undefined') {
                         if (selection['advanced']) {
                             elem.find('input').attr('advanced', 'advanced');
@@ -244,7 +244,7 @@ $(function() {
     }
 
     // 初始化显示
-    //parse_selection();
+    parse_selection();
     // 初始化：Tooltip
     $('[data-toggle="tooltip"]').tooltip();
     // 初始化：全部选中
