@@ -1,4 +1,5 @@
 <?php
+require_once('helper/page-part/functions.php');
 // 设置Header
 header('Content-Description: File Transfer');
 header('Content-Type: application/octet-stream');
@@ -66,7 +67,7 @@ foreach ($conf->{'config'}->{'category'} as $category) {
 }
 // 输出
 if ($conf->{'config'}->{'managed'}){
-    echo "#!MANAGED-CONFIG http" . (($_SERVER['SERVER_PORT'] == 443) ? "s" : "") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "\n";
+    echo "#!MANAGED-CONFIG " . get_page_base_url() . $_SERVER['REQUEST_URI'] . "\n";
 }
 echo "// 更新时间： " . date("Y-m-d H:m:s", time()) . "\n";
 echo $data;
