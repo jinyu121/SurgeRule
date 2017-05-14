@@ -1,4 +1,20 @@
 $(function() {
+    if (typeof(String.prototype.trim) === "undefined") {
+        String.prototype.trim = function() {
+            return String(this).replace(/^\s+|\s+$/g, '');
+        };
+    }
+    if (typeof(String.prototype.format) === "undefined") {
+        String.prototype.format = function() {
+            var args = arguments;
+            return this.replace(/{(\d+)}/g, function(match, number) {
+                return typeof args[number] != 'undefined' ?
+                    args[number] :
+                    match;
+            });
+        };
+    }
+
     // TextArea 多行文本转字符串数组
     function textarea_to_array(item) {
         return $(item).val().split("\n");
@@ -187,6 +203,48 @@ $(function() {
             $("#node_info").val(result);
         }
     }
+
+    function parse_selection() {
+        var elem_template = '<div class="col-sm-3 col-xs-6"><div class="checkbox"><label><input type="checkbox" name="{0}" /> {1}</label></div></div>';
+        for (var category_key in selection_data) {
+            for (var part_key in selection_data[category_key]) {
+                var part = selection_data[category_key][part_key]
+                for (var selection_id in part) {
+                    var selection = part[selection_id];
+                    var elem = $(elem_template.format(category_key + '-' + part_key + '-' + selection['name'], selection['label']));
+                    if (typeof(selection['advanced']) !== 'undefined') {
+                        if (selection['advanced']) {
+                            elem.find('input').attr('advanced', 'advanced');
+                        }
+                    }
+                    if (typeof(selection['hover']) !== 'undefined') {
+                        if (selection['hover'].trim() !== '') {
+                            elem.find('.checkbox').attr('data-toggle', 'tooltip').attr('data-placement', 'bottom').attr('title', selection['hover'].trim());
+                        }
+                    }
+                    if (typeof(selection['style_font']) !== 'undefined') {
+                        if (selection['style_font'].trim() !== '') {
+                            elem.find('label').addClass('text-' + selection['style_font'].trim());
+                        }
+                    }
+                    if (typeof(selection['style_on']) !== 'undefined') {
+                        if (selection['style_on'].trim() !== '') {
+                            elem.find('input').attr('data-on-color', selection['style_on'].trim());
+                        }
+                    }
+                    if (typeof(selection['style_off']) !== 'undefined') {
+                        if (selection['style_off'].trim() !== '') {
+                            elem.find('input').attr('data-off-color', selection['style_off'].trim());
+                        }
+                    }
+                    $("#rule-" + category_key + "-" + part_key).append(elem);
+                }
+            }
+        }
+    }
+
+    // 初始化显示
+    parse_selection();
     // 初始化：Tooltip
     $('[data-toggle="tooltip"]').tooltip();
     // 初始化：全部选中
