@@ -47,14 +47,14 @@ def gfwlist():
         with open("../dev/ip/enhance/gfwlist.conf", "w") as f:
             print("// GFWList 更新时间：", localtime, file=f)
             for line in result_ip:
-                print("IP-CIDR,", line, "/32,🚀 Proxy,no-resolve", file=f, sep="")
+                print("IP-CIDR,", line, "/32,AutoProxy,no-resolve", file=f, sep="")
 
         with open("../dev/domain/enhance/gfwlist.conf", "w") as f:
             print("// GFWList 更新时间：", localtime, file=f)
             for line in result_whitelist:
-                print("DOMAIN-SUFFIX,", line, ",💊 Direct", file=f, sep="")
+                print("DOMAIN-SUFFIX,", line, ",Direct", file=f, sep="")
             for line in result_blacklist:
-                print("DOMAIN-SUFFIX,", line, ",🚀 Proxy", file=f, sep="")
+                print("DOMAIN-SUFFIX,", line, ",AutoProxy", file=f, sep="")
 
         print("GFWList Build Success")
     except Exception as e:

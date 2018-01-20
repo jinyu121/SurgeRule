@@ -10,17 +10,17 @@
                     <div class="col-sm-12">
                         <h4>节点信息</h4>
                         <textarea id="node_info_tool_input" class="form-control" rows="5">
-太阳分组
-1.2.3.4,443,aes-256-cfb,password,https://example.com/SSEncrypt.module, ota=true
-2.2.3.4,443,aes-256-cfb,password,https://example.com/SSEncrypt.module, ota=true
-月亮分组
-3.2.3.4,443,aes-256-cfb,password,https://example.com/SSEncrypt.module, ota=true
-4.2.3.4,443,aes-256-cfb,password,https://example.com/SSEncrypt.module, ota=true
-星星分组
-5.2.3.4,443,aes-256-cfb,password,https://example.com/SSEncrypt.module, ota=true
-6.2.3.4,443,aes-256-cfb,password,https://example.com/SSEncrypt.module, ota=true
-太阳分组
-7.2.3.4,443,aes-256-cfb,password,https://example.com/SSEncrypt.module, ota=true
+SunGroup
+1.2.3.4,443,aes-256-cfb,password,https://example.com/SSEncrypt.module
+2.2.3.4,443,aes-256-cfb,password,https://example.com/SSEncrypt.module
+MoonGroup
+3.2.3.4,443,aes-256-cfb,password,https://example.com/SSEncrypt.module
+4.2.3.4,443,aes-256-cfb,password,https://example.com/SSEncrypt.module
+StarGroup
+5.2.3.4,443,aes-256-cfb,password,https://example.com/SSEncrypt.module
+6.2.3.4,443,aes-256-cfb,password,https://example.com/SSEncrypt.module
+SunGroup
+7.2.3.4,443,aes-256-cfb,password,https://example.com/SSEncrypt.module
                         </textarea>
                     </div>
                 </div>

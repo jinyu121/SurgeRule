@@ -11,19 +11,19 @@
                         <h4>完整配置</h4>
                         <textarea class="form-control" rows="5">
 [Proxy]
-💊 Direct = direct
-🌞 1 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
-🌞 2 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
-🌚 1 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
-🌚 2 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
+Direct = direct
+Sun1 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
+Sun2 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
+Moon1 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
+Moon2 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
 [Proxy Group]
-🚀 Proxy = select, 💊 Direct, 🌞 Auto, 🌚 Auto, ⚖ Select
-🌐 Proxy = select, 💊 Direct, 🚀 Proxy
-🇨🇳 Proxy = select, 💊 Direct, 🚀 Proxy
-🍎 Proxy = select, 💊 Direct, 🚀 Proxy
-🌞 Auto = url-test, 🌞 1, 🌞 2, url = http://www.gstatic.com/generate_204
-🌚 Auto = url-test, 🌚 1, 🌚 2, url = http://www.gstatic.com/generate_204
-⚖ Select = select, 🌞 1, 🌞 2, 🌚 1, 🌚 2
+AutoProxy = select, Direct, SunAuto, MoonAuto, ⚖ Select
+AppleProxy = select, Direct, AutoProxy
+CNProxy = select, Direct, AutoProxy
+AppleProxy = select, Direct, AutoProxy
+SunAuto = url-test, Sun1, Sun2, url = http://www.gstatic.com/generate_204
+MoonAuto = url-test, Moon1, Moon2, url = http://www.gstatic.com/generate_204
+⚖ Select = select, Sun1, Sun2, Moon1, Moon2
                         </textarea>
                     </div>
                 </div>
@@ -32,13 +32,13 @@
                         <h4>精简配置</h4>
                         <textarea class="form-control" rows="5">
 [Proxy]
-💊 Direct = direct
-🌞 Line = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
+Direct = direct
+SunLine = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
 [Proxy Group]
-🚀 Proxy = select, 🌞 Line
-🌐 Proxy = select, 🌞 Line
-🇨🇳 Proxy = select, 🌞 Line
-🍎 Proxy = select, 🌞 Line
+AutoProxy = select, SunLine
+AppleProxy = select, SunLine
+CNProxy = select, SunLine
+AppleProxy = select, SunLine
                         </textarea>
                     </div>
                 </div>
@@ -49,11 +49,11 @@
                             在<code>[Proxy]</code>或<code>[Proxy Group]</code>中，<b>必须</b>保留如下 Proxy 或 Group：
                         </p>
                         <ul>
-                            <li>直连规则： <code>💊 Direct = direct</code></li>
-                            <li>一般代理： <code>🚀 Proxy</code></li>
-                            <li>兜底全局代理： <code>🌐 Proxy</code></li>
-                            <li>国内网站访问规则： <code>🇨🇳 Proxy</code></li>
-                            <li>苹果服务专用规则： <code>🍎 Proxy</code></li>
+                            <li>直连规则： <code>Direct = direct</code></li>
+                            <li>一般代理： <code>AutoProxy</code></li>
+                            <li>兜底全局代理： <code>AppleProxy</code></li>
+                            <li>国内网站访问规则： <code>CNProxy</code></li>
+                            <li>苹果服务专用规则： <code>AppleProxy</code></li>
                         </ul>
                     </div>
                 </div>

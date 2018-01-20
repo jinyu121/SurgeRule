@@ -149,7 +149,7 @@ $(function() {
         // 转换成我们想要的格式
         var result_proxy = [
             "[Proxy]",
-            "💊 Direct = direct"
+            "Direct = direct"
         ];
         var result_group = [
             "[Proxy Group]"
@@ -167,7 +167,7 @@ $(function() {
                 result_proxy.push(line_name + " = custom," + val[0]);
             } else {
                 for (var i = 0; i < val.length; i++) {
-                    var line_name = key + " " + (i + 1);
+                    var line_name = key + "_" + (i + 1);
                     temp_group[key].push(line_name)
                     this_group.push(line_name);
                     result_proxy.push(line_name + " = custom," + val[i]);
@@ -176,25 +176,25 @@ $(function() {
         }
         // 全自动选择分组
         var line = "";
-        line = "🚀 Proxy = select, 💊 Direct";
+        line = "AutoProxy = select, Direct";
         for (var key in temp_group) {
-            line = line + ", " + key + " Auto";
+            line = line + ", " + key + "Auto";
         }
-        line = line + ", ⚖ Select"
+        line = line + ", ManualSelect"
         result_group.push(line);
         // 几个保留分组
-        result_group.push("🌐 Proxy = select, 💊 Direct, 🚀 Proxy");
-        result_group.push("🇨🇳 Proxy = select, 💊 Direct, 🚀 Proxy");
-        result_group.push("🍎 Proxy = select, 💊 Direct, 🚀 Proxy");
+        result_group.push("GlobalStrategy = select, Direct, AutoProxy");
+        result_group.push("CNStrategy = select, Direct, AutoProxy");
+        result_group.push("AppleStrategy = select, Direct, AutoProxy");
         // 手动选择分组
         for (var key in temp_group) {
-            line = key + " Auto = url-test," + temp_group[key].join(",") + ", url = http://www.gstatic.com/generate_204";
+            line = key + "Auto = url-test," + temp_group[key].join(",") + ", url = http://www.gstatic.com/generate_204";
             result_group.push(line);
         }
         // 纯手动选择分组
-        line = "⚖ Select = select";
+        line = "ManualSelect = select";
         for (var key in temp_group) {
-            line = line + "," + temp_group[key].join(",");
+            line = line + ", " + temp_group[key].join(", ");
         }
         result_group.push(line);
         var result = array_to_textarea(result_proxy) + "\n\n" + array_to_textarea(result_group);
