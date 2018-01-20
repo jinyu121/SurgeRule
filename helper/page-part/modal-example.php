@@ -11,19 +11,18 @@
                         <h4>完整配置</h4>
                         <textarea class="form-control" rows="5">
 [Proxy]
-Direct = direct
 Sun1 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
 Sun2 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
 Moon1 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
 Moon2 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
 [Proxy Group]
-AutoProxy = select, Direct, SunAuto, MoonAuto, ⚖ Select
-AppleStrategy = select, Direct, AutoProxy
-CNStrategy = select, Direct, AutoProxy
-AppleStrategy = select, Direct, AutoProxy
+ProxyStrategy = select, DIRECT, SunAuto, MoonAuto, ManualSelect
+AppleStrategy = select, DIRECT, ProxyStrategy
+CNStrategy = select, DIRECT, ProxyStrategy
+AppleStrategy = select, DIRECT, ProxyStrategy
 SunAuto = url-test, Sun1, Sun2, url = http://www.gstatic.com/generate_204
 MoonAuto = url-test, Moon1, Moon2, url = http://www.gstatic.com/generate_204
-⚖ Select = select, Sun1, Sun2, Moon1, Moon2
+ManualSelect = select, Sun1, Sun2, Moon1, Moon2
                         </textarea>
                     </div>
                 </div>
@@ -32,10 +31,9 @@ MoonAuto = url-test, Moon1, Moon2, url = http://www.gstatic.com/generate_204
                         <h4>精简配置</h4>
                         <textarea class="form-control" rows="5">
 [Proxy]
-Direct = direct
 SunLine = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
 [Proxy Group]
-AutoProxy = select, SunLine
+ProxyStrategy = select, SunLine
 AppleStrategy = select, SunLine
 CNStrategy = select, SunLine
 AppleStrategy = select, SunLine
@@ -49,9 +47,8 @@ AppleStrategy = select, SunLine
                             在<code>[Proxy]</code>或<code>[Proxy Group]</code>中，<b>必须</b>保留如下 Proxy 或 Group：
                         </p>
                         <ul>
-                            <li>直连规则： <code>Direct = direct</code></li>
-                            <li>一般代理： <code>AutoProxy</code></li>
-                            <li>兜底全局代理： <code>AppleStrategy</code></li>
+                            <li>一般代理： <code>ProxyStrategy</code></li>
+                            <li>兜底全局代理： <code>GlobalStrategy</code></li>
                             <li>国内网站访问规则： <code>CNStrategy</code></li>
                             <li>苹果服务专用规则： <code>AppleStrategy</code></li>
                         </ul>

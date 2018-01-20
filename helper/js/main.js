@@ -148,8 +148,7 @@ $(function() {
         });
         // 转换成我们想要的格式
         var result_proxy = [
-            "[Proxy]",
-            "Direct = direct"
+            "[Proxy]"
         ];
         var result_group = [
             "[Proxy Group]"
@@ -176,16 +175,16 @@ $(function() {
         }
         // 全自动选择分组
         var line = "";
-        line = "AutoProxy = select, Direct";
+        line = "ProxyStrategy = select, DIRECT";
         for (var key in temp_group) {
             line = line + ", " + key + "Auto";
         }
         line = line + ", ManualSelect"
         result_group.push(line);
         // 几个保留分组
-        result_group.push("GlobalStrategy = select, Direct, AutoProxy");
-        result_group.push("CNStrategy = select, Direct, AutoProxy");
-        result_group.push("AppleStrategy = select, Direct, AutoProxy");
+        result_group.push("GlobalStrategy = select, DIRECT, ProxyStrategy");
+        result_group.push("CNStrategy = select, DIRECT, ProxyStrategy");
+        result_group.push("AppleStrategy = select, DIRECT, ProxyStrategy");
         // 手动选择分组
         for (var key in temp_group) {
             line = key + "Auto = url-test," + temp_group[key].join(",") + ", url = http://www.gstatic.com/generate_204";
