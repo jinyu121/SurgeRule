@@ -18,9 +18,9 @@ Moon1 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/Surg
 Moon2 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
 [Proxy Group]
 AutoProxy = select, Direct, SunAuto, MoonAuto, ⚖ Select
-AppleProxy = select, Direct, AutoProxy
-CNProxy = select, Direct, AutoProxy
-AppleProxy = select, Direct, AutoProxy
+AppleStrategy = select, Direct, AutoProxy
+CNStrategy = select, Direct, AutoProxy
+AppleStrategy = select, Direct, AutoProxy
 SunAuto = url-test, Sun1, Sun2, url = http://www.gstatic.com/generate_204
 MoonAuto = url-test, Moon1, Moon2, url = http://www.gstatic.com/generate_204
 ⚖ Select = select, Sun1, Sun2, Moon1, Moon2
@@ -36,9 +36,9 @@ Direct = direct
 SunLine = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
 [Proxy Group]
 AutoProxy = select, SunLine
-AppleProxy = select, SunLine
-CNProxy = select, SunLine
-AppleProxy = select, SunLine
+AppleStrategy = select, SunLine
+CNStrategy = select, SunLine
+AppleStrategy = select, SunLine
                         </textarea>
                     </div>
                 </div>
@@ -51,9 +51,9 @@ AppleProxy = select, SunLine
                         <ul>
                             <li>直连规则： <code>Direct = direct</code></li>
                             <li>一般代理： <code>AutoProxy</code></li>
-                            <li>兜底全局代理： <code>AppleProxy</code></li>
-                            <li>国内网站访问规则： <code>CNProxy</code></li>
-                            <li>苹果服务专用规则： <code>AppleProxy</code></li>
+                            <li>兜底全局代理： <code>AppleStrategy</code></li>
+                            <li>国内网站访问规则： <code>CNStrategy</code></li>
+                            <li>苹果服务专用规则： <code>AppleStrategy</code></li>
                         </ul>
                     </div>
                 </div>

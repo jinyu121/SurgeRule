@@ -10,8 +10,8 @@
       "[Proxy Group]",
       "AutoProxy = select, Direct, 🌞 Auto, 🌚 Auto, ⚖ Select",
       "🌐 Proxy = select, Direct, AutoProxy",
-      "CNProxy = select, Direct, AutoProxy",
-      "AppleProxy = select, Direct, AutoProxy",
+      "CNStrategy = select, Direct, AutoProxy",
+      "AppleStrategy = select, Direct, AutoProxy",
       "🌞 Auto = url-test, 🌞 1, 🌞 2, url = http://www.gstatic.com/generate_204",
       "🌚 Auto = url-test, 🌚 1, 🌚 2, url = http://www.gstatic.com/generate_204",
       "⚖ Select = select, 🌞 1, 🌞 2, 🌚 1, 🌚 2"
