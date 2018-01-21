@@ -15,6 +15,7 @@ Sun1 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/Surge
 Sun2 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
 Moon1 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
 Moon2 = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
+
 [Proxy Group]
 ProxyStrategy = select, DIRECT, SunAuto, MoonAuto, ManualSelect
 AppleStrategy = select, DIRECT, ProxyStrategy
@@ -32,11 +33,12 @@ ManualSelect = select, Sun1, Sun2, Moon1, Moon2
                         <textarea class="form-control" rows="5">
 [Proxy]
 SunLine = custom,1.2.3.4,443,aes-256-cfb,password,https://github.com/jinyu121/SurgeRule/raw/master/helper/SSEncrypt.module, ota=true
+
 [Proxy Group]
-ProxyStrategy = select, SunLine
-AppleStrategy = select, SunLine
-CNStrategy = select, SunLine
-AppleStrategy = select, SunLine
+ProxyStrategy = select, DIRECT, SunLine
+GlobalStrategy = select, DIRECT, ProxyStrategy
+CNStrategy = select, DIRECT, ProxyStrategy
+AppleStrategy = select, DIRECT, ProxyStrategy
                         </textarea>
                     </div>
                 </div>
@@ -52,6 +54,9 @@ AppleStrategy = select, SunLine
                             <li>国内网站访问规则： <code>CNStrategy</code></li>
                             <li>苹果服务专用规则： <code>AppleStrategy</code></li>
                         </ul>
+                        <p>
+                            各种“名称”最好不要有中文、空格或Emoj表情
+                        </p>
                     </div>
                 </div>
             </div>

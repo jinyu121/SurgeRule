@@ -17,10 +17,15 @@
 
 ### Python 版
 
-1. 将 `Customize.example.json` 复制为 `Customize.json`
-1. 根据自身需要，修改`Customize.json`，或使用 `index.php` 生成
+1. 使用 `index.php` 生成 `Customize.json`
 1. 运行 `python3 Customize.py` ，得到 `Surge_Customize.conf`
 1. 导入 Surge
+
+### 使用 `destribute.py`
+
+1. 解码： `python3 destribute.py -d`
+1. 编辑: `dev/`
+1. 编码： `python3 destribute.py`
 
 ### 系统需求
 
