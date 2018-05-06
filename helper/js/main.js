@@ -1,13 +1,13 @@
-$(function() {
-    if (typeof(String.prototype.trim) === "undefined") {
-        String.prototype.trim = function() {
+$(function () {
+    if (typeof (String.prototype.trim) === "undefined") {
+        String.prototype.trim = function () {
             return String(this).replace(/^\s+|\s+$/g, '');
         };
     }
-    if (typeof(String.prototype.format) === "undefined") {
-        String.prototype.format = function() {
+    if (typeof (String.prototype.format) === "undefined") {
+        String.prototype.format = function () {
             var args = arguments;
-            return this.replace(/{(\d+)}/g, function(match, number) {
+            return this.replace(/{(\d+)}/g, function (match, number) {
                 return typeof args[number] != 'undefined' ?
                     args[number] :
                     match;
@@ -50,16 +50,17 @@ $(function() {
             },
             "other": {
                 "hosts": [],
-                "rewrite": []
+                "rewrite": [],
+                "enhance": []
             }
         }
         // 读取节点信息
         cfg.config.node = textarea_to_array("#node_info");
         // 读取配置信息
-        cfg.config.category.forEach(function(category) {
-            Object.keys(cfg[category]).forEach(function(rule_set) {
+        cfg.config.category.forEach(function (category) {
+            Object.keys(cfg[category]).forEach(function (rule_set) {
                 obj = $(":checkbox:checked[name ^= " + category + "-" + rule_set + "]");
-                obj.each(function(ith) {
+                obj.each(function (ith) {
                     name = obj[ith].name.replace(category + "-" + rule_set + "-", "");
                     cfg[category][rule_set].push(name);
                 })
@@ -76,7 +77,7 @@ $(function() {
         // 使用 URL Scheme 直接导入 Surge
         window.location = "surge:///install-config?url=" + encodeURIComponent(download_url);
         // 打开浏览器显示生成的内容
-        setTimeout(function() {
+        setTimeout(function () {
             open(download_url);
         }, 500);
         return false;
@@ -99,9 +100,9 @@ $(function() {
             // 初始化：全部不选中
             $(":checkbox").bootstrapSwitch("destroy");
             $(":checkbox").prop("checked", false);
-            cfg.config.category.forEach(function(category) {
-                Object.keys(cfg[category]).forEach(function(rule_set) {
-                    cfg[category][rule_set].forEach(function(rule_name) {
+            cfg.config.category.forEach(function (category) {
+                Object.keys(cfg[category]).forEach(function (rule_set) {
+                    cfg[category][rule_set].forEach(function (rule_name) {
                         checkbox_name = category + "-" + rule_set + "-" + rule_name;
                         $(":checkbox[name = '" + checkbox_name + "']").prop("checked", true);
                     });
@@ -130,7 +131,7 @@ $(function() {
         var group = {};
         var last_group_name = "DEFAULT_GROUP";
         // 对于每一行
-        txt_input.forEach(function(line) {
+        txt_input.forEach(function (line) {
             var line_split = line.split(',');
             if (line_split.length <= 2) { // 如果是标题行
                 var group_name = line_split[0].trim();
@@ -211,27 +212,27 @@ $(function() {
                 for (var selection_id in part) {
                     var selection = part[selection_id];
                     var elem = $(elem_template.format(category_key + '-' + part_key + '-' + selection['name'], selection['label']));
-                    if (typeof(selection['advanced']) !== 'undefined') {
+                    if (typeof (selection['advanced']) !== 'undefined') {
                         if (selection['advanced']) {
                             elem.find('input').attr('advanced', 'advanced');
                         }
                     }
-                    if (typeof(selection['hover']) !== 'undefined') {
+                    if (typeof (selection['hover']) !== 'undefined') {
                         if (selection['hover'].trim() !== '') {
                             elem.find('.checkbox').attr('data-toggle', 'tooltip').attr('data-placement', 'bottom').attr('title', selection['hover'].trim());
                         }
                     }
-                    if (typeof(selection['style_font']) !== 'undefined') {
+                    if (typeof (selection['style_font']) !== 'undefined') {
                         if (selection['style_font'].trim() !== '') {
                             elem.find('label').addClass('text-' + selection['style_font'].trim());
                         }
                     }
-                    if (typeof(selection['style_on']) !== 'undefined') {
+                    if (typeof (selection['style_on']) !== 'undefined') {
                         if (selection['style_on'].trim() !== '') {
                             elem.find('input').attr('data-on-color', selection['style_on'].trim());
                         }
                     }
-                    if (typeof(selection['style_off']) !== 'undefined') {
+                    if (typeof (selection['style_off']) !== 'undefined') {
                         if (selection['style_off'].trim() !== '') {
                             elem.find('input').attr('data-off-color', selection['style_off'].trim());
                         }

@@ -35,6 +35,8 @@
                 <h2>其他规则</h2>
                 <h3>URL重写</h3>
                 <div id="rule-other-rewrite" class="row"></div>
+                <h3>互联网合作卡</h3>
+                <div id="rule-other-enhance" class="row"></div>
 
             </div>
             <div class="section">
@@ -129,6 +131,9 @@ var selection_data={
             {'name':'qq','label':'QQ 跳转','advanced':true},
             {'name':'jd','label':'京东跳转','advanced':true},
             {'name':'nopic','label':'全局无图省流量','advanced':true,'style_off':'success'}
+        ],
+        'enhance':[
+            {'name':'tencent','label':'腾讯系','advanced':true}
         ]
     }
 }
